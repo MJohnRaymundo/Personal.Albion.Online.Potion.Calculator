@@ -5,5 +5,19 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    double t3_Potion_acid;
+    double comfrey;
+    double ingridientCost;
+
+    std::cout << "Enter price of comfrey: " << std::endl;
+    std::cin >> comfrey;
+
+    ingridientCost = comfrey * 8;
+
+    t3_Potion_acid = ingridientCost;
+
+    std::cout << "Cost for Minor Acid Potion is: " << t3_Potion_acid;
+
+    return 0;
+
 }
