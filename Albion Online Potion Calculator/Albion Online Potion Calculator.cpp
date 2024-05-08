@@ -26,70 +26,126 @@
 #include <string>
 
 class ingredientCostFormuala {
+private:
+    /*double ingridientOneCost;
+    double ingredientTwoCost;
+    double ingredientThreeCost;
+    double ingredientFourCost;
+    double ingredientFiveCost;
+    double arcaneExtractCost;
+    double artifactCost;
+    std::string potion;*/
+
+    double arcaneAgaric;
+
+    double comfrey;
+    double henEgg;
+
+    double burdock;
+    double goatsButter;
+    double goatsMilk;
+
+    double gooseEgg;
+    double teasel;
+
+    double sheepsButter;
+    double foxglove;
+    double sheepsMilk;
+    double potatoes;
+
+    double corn;
+    double mullein;
+
+    double cowsButter;
+    double cowsMilk;
+    double pumpkin;
+    double yarrow;
+    
+    /*const int multiplyByFour = 4;
+    const int multiplyBySix = 6;*/
+    const int multiplyByEight = 8;
+    /*const int multiplyByTwelve = 12;
+    const int multiplyBySixteen = 16;
+    const int multiplyByEighteen = 18;
+    const int multiplyByTwentyFour = 24;
+    const int multiplyByThirtySix = 36;
+    const int multiplyBySeventyTwo = 72;*/
+
+    
 public:
-    double ingridientOne;
-    double ingredientTwo;
-    double ingredientThree;
-    double ingredientFour;
-    double ingredientFive;
-    double ingredientSix;
-    double ingredientSeven;
-    std::string Potion;
-    
-    /*const int multiplyByFour;
-    const int multiplyBySix;*/
-    const int multipleByEight = 8;
-    /*const int multiplyByTwelve;
-    const int multiplyBySixteen;
-    const int multiplyByEighteen;
-    const int multiplyByTwentyFour;
-    const int multiplyByThirtySix;
-    const int multipleBySeventyTwo;*/
-
-    
-//public:
-//    void setingridientOne(double ingridientOne) {
-//        ingridientOne = ingridientOne;
+//    void setingridientone(double ingridientone) {
+//        ingridientone = ingridientone;
 //    }
-//    double getingridientOne() {
-//        return ingridientOne;
+//    double getingridientone() {
+//        return ingridientone;
+//    }
+//
+//    , double itemTwo, double itemThree, double itemFour, double itemFive, double itemSix, double itemSeven
+//
+//    double setIngredientNames(double itemOne) {
+//            return ingridientOne * multipleByEight;
 //    }
 
-    //, double itemTwo, double itemThree, double itemFour, double itemFive, double itemSix, double itemSeven
+    double setIngredientCost(double arcaneAgaricInput, double comfreyInput, double henEggInput, double burdockInput, double goatsButterInput, double goatsMilkInput, double gooseEggInput, double teaselInput, double sheepsButterInput, double foxgloveInput, double sheepsMilkInput, double potatoesInput, double cornInput, double mulleinInput, double cowsButterInput, double cowsMilkInput, double pumpkinInput, double yarrowInput) {
+        arcaneAgaric = arcaneAgaricInput;
+        comfrey = comfreyInput;
+        henEgg = henEggInput;
+        burdock = burdockInput;
+        goatsButter = goatsButterInput;
+        goatsMilk = goatsMilkInput;
+        burdock = burdockInput;
+        goatsButter = goatsButterInput;
+        goatsMilk = goatsMilkInput;
 
-    double setIngredientNames(double itemOne) {
-            return ingridientOne * multipleByEight;
+        gooseEgg = gooseEggInput;
+        teasel = teaselInput;
+
+        sheepsButter = sheepsButterInput;
+        foxglove = foxgloveInput;
+        sheepsMilk = sheepsMilkInput;
+        potatoes = potatoesInput;
+
+        corn = cornInput;
+        mullein = mulleinInput;
+
+        cowsButter = cowsButterInput;
+        cowsMilk = cowsMilkInput;
+        pumpkin = pumpkinInput;
+        yarrow = yarrowInput;
+
+        return 0;
     }
 
     double calculateT3Potions() {
         //comfrey * 8
+        return comfrey * multiplyByEight;
     }
 
-    double calculateT4Potions() {
-        /*Berserk = Werewolfs Fang + (goatsMilk * 16)
-        Poison = (burdock*8) + (comfrey*4)
-        Energy = (burdock*24) + (goatsMilk * 6)
-        Gathering = Runestone_Tooth + (goatsButter * 16)
-        Healing = (burdock * 24) + (hen egg * 6)
-        Hellfire = Imps_Horn + (burdock * 16)
-        Tornado = Dawnfeather + (burdock * 16)*/
-    }
-    
-    double calculateT5Potions() {
-        
-    }
+    //double calculateT4Potions() {
+    //    /*Berserk = Werewolfs Fang + (goatsMilk * 16)
+    //    Poison = (burdock*8) + (comfrey*4)
+    //    Energy = (burdock*24) + (goatsMilk * 6)
+    //    Gathering = Runestone_Tooth + (goatsButter * 16)
+    //    Healing = (burdock * 24) + (hen egg * 6)
+    //    Hellfire = Imps_Horn + (burdock * 16)
+    //    Tornado = Dawnfeather + (burdock * 16)*/
+    //}
+    //
+    //double calculateT5Potions() {
+    //    
+    //}
 
-    double calculateT6Potions() {
+    //double calculateT6Potions() {
 
-    }
+    //}
 
-    double calculateT7Potions() {
+    //double calculateT7Potions() {
 
-    }
+    //}
 
-    double calculateT8Potions() {
+    //double calculateT8Potions() {
 
-    }
+    //}
 
 
 };
@@ -143,12 +199,12 @@ int main()
 
     // ingredients
 
-    //double arcaneAgaric;
+    double arcaneAgaric;
 
     double comfrey;
-    //double henEgg;
+    double henEgg;
 
-    /*double burdock;
+    double burdock;
     double goatsButter;
     double goatsMilk;
 
@@ -166,13 +222,56 @@ int main()
     double cowsButter;
     double cowsMilk;
     double pumpkin;
-    double yarrow;*/
+    double yarrow;
 
-    std::cout << "Enter price of comfrey: " << std::endl;
+    std::cout << "Enter price of Ingredients: " << std::endl;
+    std::cout << "arcaneAgaric " << std::endl;
+    std::cin >> arcaneAgaric;
+
+    std::cout << "comfrey " << std::endl;
     std::cin >> comfrey;
-    ingredientCostFormuala comfreyPotion;
-    std::cout << comfreyPotion.setIngredientNames(comfrey) << std::endl;
+    std::cout << "henEgg " << std::endl;
+    std::cin >> henEgg;
 
+    std::cout << "burdock " << std::endl;
+    std::cin >> burdock;
+    std::cout << "goatsButter " << std::endl;
+    std::cin >> goatsButter;
+    std::cout << "goatsMilk " << std::endl;
+    std::cin >> goatsMilk;
+    
+    std::cout << "gooseEgg " << std::endl;
+    std::cin >> gooseEgg;
+    std::cout << "teasel " << std::endl;
+    std::cin >> teasel;
+
+    std::cout << "sheepsButter " << std::endl;
+    std::cin >> sheepsButter;
+    std::cout << "foxglove " << std::endl;
+    std::cin >> foxglove;
+    std::cout << "sheepsMilk " << std::endl;
+    std::cin >> sheepsMilk;
+    std::cout << "potatoes " << std::endl;
+    std::cin >> potatoes;
+
+    std::cout << "corn " << std::endl;
+    std::cin >> corn;
+    std::cout << "mullein " << std::endl;
+    std::cin >> mullein;
+
+    std::cout << "cowsButter " << std::endl;
+    std::cin >> cowsButter;
+    std::cout << "cowsMilk " << std::endl;
+    std::cin >> cowsMilk;
+    std::cout << "pumpkin " << std::endl;
+    std::cin >> pumpkin;
+    std::cout << "yarrow " << std::endl;
+    std::cin >> yarrow;
+
+    ingredientCostFormuala calculateIngridientCost;
+    std::cout << calculateIngridientCost.setIngredientCost(arcaneAgaric, comfrey, henEgg, burdock, goatsButter, goatsMilk, gooseEgg, teasel, sheepsButter, foxglove, sheepsMilk, potatoes, corn, mullein, cowsButter, cowsMilk, pumpkin, yarrow) << std::endl;
+    ingredientCostFormuala t3Potion;
+    std::cout << "T3 Potion costs: " << calculateIngridientCost.calculateT3Potions() << std::endl;
 
     return 0;
 }
