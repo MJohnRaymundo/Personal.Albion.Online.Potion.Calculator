@@ -85,6 +85,7 @@ private:
     const int multiplyBySeventyTwo = 72;
     const int multiplyByOneHundredFourtyFour = 144;
 
+    //How many potions are crafted per set
     const int potionsCraftedPerSet = 10;
 
     //Potions
@@ -121,6 +122,17 @@ private:
     double t8GatheringPotion = 0;
     double t8HellfirePotion = 0;
     double t8TornadoPotion = 0;
+
+    //Arcane Extract and Enchantment
+    double potionEnchantment = 0;
+    double basicArcaneExtract = 0;
+    double refinedArcaneExtract = 0;
+    double pureArcaneExtract = 0;
+
+    //Echantment multiplier
+    const double tier3Multiplier = 5;
+    const double tier45Multiplier = 15;
+    const double tier678Multiplier = 45;
 
 public:
 
@@ -175,6 +187,9 @@ public:
         return 0;
     }*/
 
+
+    //Calculate Potion's Herb Cost per set
+    //Would creating a function that uses switch cases using the tier of the potion be better?
     double calculatePotions() {
         t3PotionCost = comfrey * multiplyByEight;
 
@@ -218,15 +233,54 @@ public:
         return 0;
     }
 
+    //enchantment
+    double setPotionEnchantment(double potionEnchantmentInput) {
+        potionEnchantment = potionEnchantmentInput;
+        
+        return 0;
+    }
+
+    //arcane extract and echantment calculation
+    double setArcaneExtractCostValue(double arcaneExtractInput) {
+        if (potionEnchantment == 1) {
+            basicArcaneExtract = arcaneExtractInput;
+        }
+        else if (potionEnchantment == 2) {
+            refinedArcaneExtract = arcaneExtractInput;
+        }
+        else if (potionEnchantment == 3) {
+            pureArcaneExtract = arcaneExtractInput;
+        }
+        else {
+            std::cout << "Invalid Enchantment";
+        }
+
+        return 0;
+    }
+
+    //enchantment multiplier
+
     void printPotionCost() {
         std::cout << "T3 Potions Cost: " << t3PotionCost << std::endl;
+    }
+
+    void printArcaneEnchantCost() {
+        if (potionEnchantment == 1) {
+            std::cout << "T4 Enchantment 1 Potions Cost: " << basicArcaneExtract << std::endl;
+        }
+        else if (potionEnchantment == 2) {
+            std::cout << "T4 Enchantment 2 Potions Cost: " << refinedArcaneExtract << std::endl;
+        }
+        else if (potionEnchantment == 3) {
+            std::cout << "T4 Enchantment 3 Potions Cost: " << pureArcaneExtract << std::endl;
+        }
     }
 
 };
 
 int main()
 {
-    // Potions
+    //Potions
     /*double t3PotionAcid;
     double t3PotionCleansing;
     double t3PotionCalming;
@@ -266,7 +320,7 @@ int main()
     double t8PotionHellfire;
     double t8PotionTornado;*/
 
-    // ingredients
+    //Ingredients
     double agaric;
     double comfrey;
     double henEgg;
@@ -285,6 +339,12 @@ int main()
     double cowsMilk;
     double pumpkin;
     double yarrow;
+
+    //Input Enchantment
+    double potionEnchantment;
+
+    //Input Arcane Extract Cost
+    double arcaneExtract;
 
     //Input herb values
     /*std::cout << "Enter price of Ingredients: " << std::endl;
@@ -326,13 +386,19 @@ int main()
     std::cin >> yarrow;*/
 
     ingredientCostFormuala calculateIngridientCost;
-    calculateIngridientCost.setHerbCost(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18);
+    //calculateIngridientCost.setHerbCost(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18);
     // agaric, comfrey, henEgg, burdock, goatsButter, goatsMilk, gooseEgg, teasel, sheepsButter, foxglove, sheepsMilk, potatoes, corn, mullein, cowsButter, cowsMilk, pumpkin, yarrow
     //std::cout << calculateIngridientCost.setHerbCost(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18) << std::endl;
     /*ingredientCostFormuala t3Potion;
     std::cout << "Potion costs: " << calculateIngridientCost.calculatePotions() << std::endl;*/
-    calculateIngridientCost.calculatePotions();
-    calculateIngridientCost.printPotionCost();
+    //calculateIngridientCost.calculatePotions();
+    //calculateIngridientCost.printPotionCost();
+
+    calculateIngridientCost.setPotionEnchantment(2);
+    calculateIngridientCost.setArcaneExtractCostValue(10000);
+    calculateIngridientCost.printArcaneEnchantCost();
+
+
 
     return 0;
 }
